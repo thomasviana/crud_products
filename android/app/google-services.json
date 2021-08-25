@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "929896429082",
+    "project_id": "crud-products-94a67",
+    "storage_bucket": "crud-products-94a67.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:929896429082:android:6f56576d82491f49f9c3a3",
+        "android_client_info": {
+          "package_name": "com.thomasviana.crud_products"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "929896429082-cm26eostpk0et0v1fumeaa4sblunb24j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2rLCS_Bs9wmgmO7tLvybB9Fmw3DKFjPI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "929896429082-cm26eostpk0et0v1fumeaa4sblunb24j.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "929896429082-ngl51e3o0rjsl4cdbp04vktavc0rt0kg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.thomasviana.crudProducts"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
