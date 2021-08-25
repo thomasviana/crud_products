@@ -23,14 +23,9 @@ class Auth with ChangeNotifier {
   }
 
   Future<void> login(String email, String password) async {
-    try {
-      final existingUser = await _auth.signInWithEmailAndPassword(
-          email: email, password: password);
-      _userId = existingUser.user!.uid;
-    } catch (e) {
-      print(e.toString());
-    }
-
+    final existingUser = await _auth.signInWithEmailAndPassword(
+        email: email, password: password);
+    _userId = existingUser.user!.uid;
     final userData =
         await FirebaseFirestore.instance.collection('users').doc(userId).get();
     _userName = userData['name'];

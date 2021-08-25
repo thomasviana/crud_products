@@ -1,6 +1,7 @@
 import 'package:crud_products/providers/auth.dart';
 import 'package:crud_products/custom/rounded_button.dart';
 import 'package:crud_products/services/auth_validators.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -65,22 +66,25 @@ class _AuthScreenState extends State<AuthScreen> {
         setState(() {
           showSpinner = false;
         });
-      } catch (e) {
-        showError(
-            'La contraseña no corresponde al usuario o el usuario no exite.');
+      } on FirebaseAuthException catch (e) {
+        showError(e.message);
+        setState(() {
+          showSpinner = false;
+        });
       }
     } else if (_isValid && _loginMode) {
       print("loginMode");
-
       try {
         await Provider.of<Auth>(context, listen: false).login(email, password);
         Navigator.pushReplacementNamed(context, HomeScreen.routeName);
         setState(() {
           showSpinner = false;
         });
-      } catch (e) {
-        showError(
-            'La contraseña no corresponde al usuario o el usuario no exite.');
+      } on FirebaseAuthException catch (e) {
+        showError(e.message);
+        setState(() {
+          showSpinner = false;
+        });
       }
     } else if (!_isValid) {
       return;
